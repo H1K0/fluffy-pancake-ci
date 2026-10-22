@@ -4,15 +4,15 @@ import os
 FILE = "tasks.json"
 
 
-# Загрузить задачи из файла
 def load_tasks():
+    """Загрузить задачи из файла. Если файла нет, вернуть пустой список."""
     if not os.path.exists(FILE):
         return []
     with open(FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-# Сохранить задачи в файл
 def save_tasks(tasks):
+    """Сохранить список задач в файл в формате JSON."""
     with open(FILE, "w", encoding="utf-8") as f:
         json.dump(tasks, f, ensure_ascii=False, indent=2)
