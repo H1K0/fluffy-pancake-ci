@@ -28,5 +28,6 @@ def delete_task(index):
     tasks = load_tasks()
     if 0 <= index < len(tasks):
         del tasks[index]
+        save_tasks(tasks)
         return True
     return False
