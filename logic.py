@@ -2,7 +2,7 @@ from storage import load_tasks, save_tasks
 
 
 def add_task(title):
-    """Добавить задачу с названием `title` в список и сохранить."""
+    """Добавить задачу с названием `title` в конец списка и сохранить в файл."""
     tasks = load_tasks()
     tasks.append({"title": title, "done": False})
     save_tasks(tasks)
