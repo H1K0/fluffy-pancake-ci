@@ -21,3 +21,14 @@ def test_mark_done_ok():
 @pytest.mark.parametrize("index", [-1, 0, 5])
 def test_mark_done_bad_index(index):
     assert logic.mark_done(index) is False
+
+
+def test_delete_task():
+    logic.add_task("A")
+    logic.add_task("B")
+    assert logic.delete_task(0) is True
+    assert [t["title"] for t in logic.list_tasks()] == ["B"]
+
+
+def test_delete_task_bad_index():
+    assert logic.delete_task(3) is False
