@@ -20,3 +20,12 @@ def test_cli_rejects_non_number(monkeypatch, capsys):
     main.main()
 
     assert "Нужно число." in capsys.readouterr().out
+
+
+def test_cli_unknown_command(monkeypatch, capsys):
+    answers = iter(["9", "4"])
+    monkeypatch.setattr("builtins.input", lambda _="": next(answers))
+
+    main.main()
+
+    assert "Не понял команду." in capsys.readouterr().out
