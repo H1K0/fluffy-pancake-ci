@@ -1,8 +1,8 @@
 from logic import add_task, list_tasks, mark_done
 
 
-# Показать список задач
 def show():
+    """Показать список задач с отметками о выполнении."""
     tasks = list_tasks()
     if not tasks:
         print("Список пуст.")
@@ -12,8 +12,8 @@ def show():
         print(f"{i}. [{mark}] {t['title']}")
 
 
-# Точка входа
 def main():
+    """Точка входа: цикл меню с вводом команд."""
     while True:
         print("\n1) Добавить  2) Показать  3) Отметить  4) Выход")
         choice = input("> ").strip()

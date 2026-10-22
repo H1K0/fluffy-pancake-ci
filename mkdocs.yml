@@ -1,0 +1,13 @@
+site_name: fluffy-pancake
+site_description: Консольный TODO-менеджер на Python
+theme:
+  name: material
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+nav:
+  - Главная: index.md
+  - Справочник API: api.md
